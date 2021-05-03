@@ -1,3 +1,5 @@
+package midterm;
+
 public class TestCode {
 
     static int[] makeArray() {

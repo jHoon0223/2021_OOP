@@ -1,3 +1,5 @@
+package oop2;
+
 import java.util.Scanner;
 
 public class oop_2_16 {

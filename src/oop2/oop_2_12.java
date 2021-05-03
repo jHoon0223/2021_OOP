@@ -1,3 +1,5 @@
+package oop2;
+
 public class oop_2_12 {
     public static void main(String[] args) {
         int sum = 0;

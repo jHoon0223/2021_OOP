@@ -43,7 +43,7 @@ public class PhoneBook {
                 }
                 else {
                     cnt++;
-                    if (cnt == 3) {
+                    if (cnt == n) {
                         System.out.println(name + "이 없습니다.");
                         break;
                     }

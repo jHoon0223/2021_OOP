@@ -8,7 +8,14 @@ public class consertReservation {
     consertReservation(int a) { }
 
     void addResv(String name, int num) {
-        seat[num-1] = name;
+        if (num > seat.length || num < 0)
+            System.out.println("<<<좌석에 없는 번호입니다.>>>");
+        else if (seat[num-1].equals("---")){
+            seat[num-1] = name;
+            System.out.println("<<<예약을 완료하였습니다.>>>");
+        }
+        else
+            System.out.println("<<<이미 예약이 완료된 좌석입니다.>>>");
     }
     void printResv() {
         for (int i = 0; i < seat.length; i++) {
@@ -17,10 +24,18 @@ public class consertReservation {
         System.out.println(" ");
     }
     void removeResv(String name) {
+        int cnt = 0;
         for (int i = 0; i < seat.length; i++) {
-            if (name.equals(seat[i]))
+            if (name.equals(seat[i])) {
                 seat[i] = "---";
+                System.out.println("<<<예약이 취소되었습니다.>>>");
+            }
+
+            else
+                cnt++;
         }
+        if (cnt == seat.length)
+            System.out.println("<<<" + name + "님은 예약 목록에 없습니다.>>>");
     }
 
     public static void main(String[] args) {
@@ -33,7 +48,7 @@ public class consertReservation {
         int option, n, number;
         String name;
 
-        System.out.println("명품콘서트홀 예약 시스템입니다.");
+        System.out.println("<<<명품콘서트홀 예약 시스템입니다.>>>");
 
         while(true) {
             System.out.print("예약:1, 조회:2, 취소:3, 끝내기:4>>");
@@ -52,6 +67,10 @@ public class consertReservation {
                         System.out.print("A>> ");
                     else if (n == 2)
                         System.out.print("B>> ");
+                    else {
+                        System.out.println("<<<존재하지 않는 좌석구분 입니다.>>>");
+                        break;
+                    }
                     R[n].printResv();
                     System.out.print("이름>>");
                     name = scanner.next();
@@ -77,10 +96,17 @@ public class consertReservation {
                         System.out.print("A>> ");
                     else if (n == 2)
                         System.out.print("B>> ");
+                    else {
+                        System.out.println("<<<존재하지 않는 좌석구분 입니다.>>>");
+                        break;
+                    }
                     R[n].printResv();
                     System.out.print("이름>>");
                     name = scanner.next();
                     R[n].removeResv(name);
+                    break;
+                default:
+                    System.out.println("<<<존재하지 않는 옵션입니다.>>>");
                     break;
             }
         }

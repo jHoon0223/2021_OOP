@@ -12,6 +12,7 @@ class Dictionary extends PairMap {
         keyArray = new String[a];
         valueArray = new String[a];
     }
+    @Override
     String get(String key) {
         for (int j = 0; j < keyArray.length; j++) {
             if (key.equals(keyArray[j]))
@@ -19,6 +20,7 @@ class Dictionary extends PairMap {
         }
         return null;
     }
+    @Override
     void put(String key, String value) {
         for (int j = 0; j < keyArray.length; j++) {
             if (key.equals(keyArray[j])) {
@@ -30,6 +32,7 @@ class Dictionary extends PairMap {
         this.valueArray[i] = value;
         i++;
     }
+    @Override
     String delete(String key) {
         i--;
         for (int j = 0; j < keyArray.length; j++) {
@@ -41,6 +44,7 @@ class Dictionary extends PairMap {
         }
         return null;
     }
+    @Override
     int length() { return i; }
 }
 

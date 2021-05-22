@@ -1,3 +1,5 @@
+package oop4;
+
 class Point {
     private int x, y;
     Point() { }

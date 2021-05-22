@@ -1,3 +1,5 @@
+package oop4;
+
 interface Shape {
     final double PI = 3.14;
     void draw();

@@ -1,4 +1,4 @@
-class Shape {
+/*class Shape {
     protected String name;
     public void paint(){
         draw();
@@ -22,4 +22,4 @@ public class Test extends Shape{
         Shape b = new Test();
         b.paint();
     }
-}
+}*/

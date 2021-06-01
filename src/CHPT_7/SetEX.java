@@ -9,15 +9,18 @@ public class SetEX {
     public static void main(String[] args) {
         List<String> list = Arrays.asList(new String[] {
                 "Apple", "Orange", null, "Mango", null});
+        Set<String> set = new HashSet<>(list);
 
-        for (String str: list)
+        for (String str: set)
             System.out.print(str + "\t");
         System.out.println();
 
-        Set<String> set = new HashSet<>(list);
         set.add("Strawberry");
-        set.add(null);
+        for (String str: set)
+            System.out.print(str + "\t");
+        System.out.println();
 
+        set.add(null);
         for (String str: set)
             System.out.print(str + "\t");
     }
